@@ -1,0 +1,649 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  padding: 20px 0px 20px 20px;
+}
+
+.text-section {
+  flex: 1;
+  padding-right: 20px;
+  margin-left: 80px;
+}
+
+.text-section h1 {
+  font-size: 3em;
+  margin: 0;
+}
+
+.text-section h2 {
+  color: red;
+  font-size: 1.5em;
+}
+
+.text-section p {
+  font-size: 1em;
+  color: #666;
+  line-height: 1.5;
+  padding-right: 60px;
+}
+
+.text-section button {
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1em;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.button:hover {
+  background-color: #ed3944;
+}
+
+.image-section {
+  flex: 1;
+}
+
+.image-section img {
+  width: 100%;
+  border-radius: 2px;
+  margin-bottom: 70px;
+}
+
+.slider-container {
+  text-align: left;
+  margin: 0 auto;
+  max-width: 100%;
+  padding-left: 61px;
+  display: flex;
+  position: relative;
+}
+
+.slider-container-img {
+  text-align: center;
+  padding: 20px;
+  position: relative;
+  /* max-width: 1200px; */
+  width: 100%;
+  height: 500px; /* Set a height for the container */
+  overflow: hidden;
+  display: flex;
+  /* justify-content: ; */
+}
+.slider-container h2 {
+  color: red;
+  font-size: 1.5em;
+}
+
+.slider-container h1 {
+  font-size: 3em;
+  margin: 0;
+}
+
+.slider {
+  display: flex;
+  height: 280px;
+  /* justify-content: space-evenly; */
+  transition: transform 1s ease-in-out; /* Aesthetic delay */
+  height: 100%; /* Make sure slider takes full height of container */
+  margin-left: 40px;
+}
+
+.slide {
+  min-width: 25%;
+  box-sizing: border-box;
+  transition: transform 0.5s;
+  height: 100%; /* Make sure slide takes full height of container */
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%; /* Ensure images fill the slide */
+  object-fit: cover; /* Maintain aspect ratio and cover the slide area */
+  border-radius: 3px;
+  display: block;
+}
+
+.slide .hover-content {
+  display: none;
+  background-color: red;
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+}
+
+.slide:hover .hover-content {
+  display: block;
+}
+
+.small-text {
+  margin-right: 0px;
+
+  color: black;
+  line-height: 1.5;
+  padding-left: 100px;
+
+  padding-right: 90px;
+  width: 50%;
+  font-weight: 600;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.small-text p {
+  font-size: 0.8em;
+  margin-top: 80px;
+}
+.dots {
+  text-align: center;
+  padding: 20px;
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 61px;
+}
+
+.dot {
+  height: 15px;
+  width: 15px;
+  margin: 0 5px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  cursor: pointer;
+  position: relative;
+}
+
+.dot:hover::before {
+  content: "";
+  height: 25px;
+  width: 25px;
+  border: 2px solid #717171;
+  border-radius: 50%;
+  position: absolute;
+  top: -5px;
+  left: -5px;
+}
+
+.active,
+.dot:hover {
+  background-color: #ed3944;
+}
+
+.form-popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 50px;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.form-container {
+  background-color: white;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 500px;
+  border-radius: 10px;
+}
+
+.form-container h2 {
+  margin-bottom: 15px;
+}
+
+.form-container input[type="email"],
+.form-container input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0 15px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.form-container input[type="checkbox"] {
+  margin: 10px 0;
+}
+
+.form-container .btn {
+  background-color: #ff4b5c;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+.form-container .cancel {
+  background-color: #ccc;
+  color: black;
+}
+
+/* Project Section */
+.project-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px 20px;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.section-title h2 {
+  color: red;
+  font-size: 1.5em;
+}
+
+.section-title h1 {
+  font-size: 3em;
+  margin: 0;
+}
+
+.section-title p {
+  font-size: 1em;
+  color: #666;
+  line-height: 1.5;
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.project-image {
+  flex: 1;
+  width: 100%;
+  height: auto;
+  padding-left: 100px;
+}
+
+.details-section {
+  flex: 1;
+  padding-left: 20px;
+  width: 270px;
+  padding-left: 120px;
+  margin-bottom: 70px;
+}
+
+.detail-item {
+  width: 230px;
+  height: 80px;
+  background-color: #f4f4f4;
+  padding: 20px;
+  cursor: pointer;
+  /* border-radius: 1px; */
+  margin-bottom: 1px;
+}
+
+.detail-item.active {
+  background-color: #ed3944;
+  color: white;
+}
+
+.detail-title {
+  margin: 0;
+  font-size: 1em;
+}
+
+.detail-description {
+  margin: 10px 0 0 0;
+  font-size: 0.9em;
+  font-weight: 500;
+}
+
+/* Stats Section */
+.stats-slider {
+  padding: 50px 0;
+  background-color: #f9f9f9;
+}
+
+.stats-slider .text-section h2 {
+  color: red;
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+.stats-slider .text-section h1 {
+  font-size: 3em;
+  margin-bottom: 40px;
+}
+
+.stats-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.stats-container-1 {
+  display: flex;
+  align-items: center;
+  height: 250px;
+  width: 100%;
+}
+
+.stat {
+  background-color: white;
+  height: 150px;
+  width: 150px;
+  padding: 20px;
+  border-radius: 5px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.stat:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.stat img {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 20px;
+}
+
+.stat-info h3 {
+  font-size: 2em;
+  margin-bottom: 10px;
+  margin-top: 15px;
+}
+
+.stat-info p {
+  font-size: 1em;
+  color: #666;
+}
+
+.fas {
+  color: red;
+  font-size: 35px;
+  margin-top: 10px;
+}
+
+/*card*/
+
+.card body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #f0f0f0;
+  font-family: Arial, sans-serif;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: #e74c3c;
+  color: white;
+  /* padding: 10px; */
+  border-radius: 1px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.icon i {
+  font-size: 35px;
+  /* margin-top: 50px; */
+  margin-bottom: 15px;
+  color: white;
+}
+
+h2 {
+  margin: 10px 0;
+  font-size: 18px;
+  font-weight: 300;
+}
+
+p {
+  font-size: 12px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+button {
+  background-color: white;
+  color: #e74c3c;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+button:hover {
+  background-color: #c0392b;
+  color: white;
+}
+
+/* media Queries */
+
+@media (max-width: 1200px) {
+  .text-section {
+    margin-left: 40px;
+  }
+
+  .text-section p {
+    padding-right: 30px;
+  }
+
+  .small-text {
+    padding-left: 50px;
+    padding-right: 45px;
+    width: 70%;
+  }
+
+  .project-image {
+    padding-left: 50px;
+  }
+
+  .details-section {
+    padding-left: 60px;
+  }
+}
+
+@media (max-width: 992px) {
+  .container {
+    flex-direction: column;
+    height: auto;
+    padding: 10px;
+  }
+
+  .text-section {
+    padding-right: 0;
+    margin-left: 0;
+  }
+
+  .text-section h1 {
+    font-size: 2.5em;
+  }
+
+  .text-section h2 {
+    font-size: 1.2em;
+  }
+
+  .text-section p {
+    font-size: 0.9em;
+    padding-right: 20px;
+  }
+
+  .image-section {
+    margin-top: 20px;
+  }
+
+  .slider-container {
+    padding-left: 20px;
+  }
+
+  .slider-container-img {
+    height: 400px;
+  }
+
+  .slider {
+    margin-left: 20px;
+  }
+
+  .slide {
+    min-width: 33.33%;
+  }
+
+  .small-text {
+    padding-left: 25px;
+    padding-right: 25px;
+    width: 80%;
+  }
+
+  .project-image {
+    padding-left: 20px;
+  }
+
+  .details-section {
+    padding-left: 20px;
+  }
+
+  .stats-container {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .stats-container-1 {
+    height: auto;
+  }
+
+  .stat {
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .slider-container-img {
+    height: 300px;
+  }
+
+  .slide {
+    min-width: 50%;
+  }
+
+  .text-section h1 {
+    font-size: 2em;
+  }
+
+  .text-section h2 {
+    font-size: 1em;
+  }
+
+  .text-section p {
+    font-size: 0.8em;
+  }
+
+  .small-text {
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 90%;
+  }
+
+  .project-image {
+    padding-left: 10px;
+  }
+
+  .details-section {
+    padding-left: 10px;
+  }
+}
+
+@media (max-width: 576px) {
+  .slide {
+    min-width: 100%;
+  }
+
+  .slider-container-img {
+    height: 200px;
+  }
+
+  .text-section h1 {
+    font-size: 1.5em;
+  }
+
+  .text-section h2 {
+    font-size: 0.8em;
+  }
+
+  .text-section p {
+    font-size: 0.7em;
+  }
+
+  .small-text {
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 100%;
+  }
+
+  .project-image {
+    padding-left: 5px;
+  }
+
+  .details-section {
+    padding-left: 5px;
+  }
+
+  .stat {
+    width: 100%;
+    height: auto;
+    padding: 10px;
+  }
+
+  .stat img {
+    width: 30px;
+    height: 30px;
+    margin-bottom: 10px;
+  }
+
+  .stat-info h3 {
+    font-size: 1.5em;
+  }
+
+  .stat-info p {
+    font-size: 0.8em;
+  }
+}
